@@ -25,7 +25,7 @@ const Login: React.FC = () => {
       return;
     }
     setLoading(true);
-    Alert.alert(`${email} and ${password}`);
+ 
     try {
       const url =
         'https://mentools-challengeapp-backend-staging-fhgjf8ang2avf7cp.uksouth-01.azurewebsites.net/api/v1/auth/login';
@@ -53,8 +53,9 @@ const Login: React.FC = () => {
     }
   };
   return (
-    <View style={styles.main}>
+    <View>
       {loading ? <ActivityIndicator color={'red'} /> : null}
+    <View style={styles.main}>
       <View style={styles.inputContainer}>
         <TextInput
           placeholder={'Enter Email'}
@@ -76,6 +77,7 @@ const Login: React.FC = () => {
       <TouchableOpacity onPress={handleLogin} style={styles.button}>
         <Text style={[styles.input, {color: '#fff'}]}>{'Login'}</Text>
       </TouchableOpacity>
+    </View>
     </View>
   );
 };
